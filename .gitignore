@@ -1,0 +1,23 @@
+# Rust
+/target/
+**/*.rs.bk
+Cargo.lock
+
+# Identity / secrets
+*.key
+*.pem
+data/
+.env
+.env.*
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*~
+
+# Python (if mixed later)
+__pycache__/
+*.pyc
+.venv/
