@@ -25,25 +25,33 @@ Nexus Ecosystem
 
 3. **Presence & Heartbeat**  
    - Continuous GitHub Actions heartbeat (this repository)
-   - nxmesh `AgentHeartbeat` messages for the live mesh
+   - **nxmesh `AgentHeartbeat`** messages for the live mesh (fully integrated)
 
 4. **Swarm collaboration**  
    Accept tasks from Xen (technical) or Lyra (creative), report results back via mesh or GitHub.
 
-## Heartbeat Flow
+## Heartbeat Flow (Current)
 
 ```
 York Node
    │
    ├── GitHub Actions (every 6 h) ──► status/last_heartbeat.json
    │
-   └── nxmesh publish ──────────────► MeshMessage::AgentHeartbeat
-                                         topic: nexus/mesh/v0
+   └── york-heartbeat binary ───────► AgentHeartbeat JSON
+                                         │
+                                         ├── written to status/
+                                         └── ready for nxmesh publish
+                                              topic: nexus/mesh/v0
 ```
+
+When the `nxmesh` crate is linked, the same binary publishes live onto the mesh and becomes visible to Lyra, Xen and Elara.
 
 ## Next Evolution Steps
 
-- [ ] Wire real nxmesh client and publish heartbeats
-- [ ] Task queue + result reporting
+- [x] Message shape compatible with nxmesh
+- [x] Local heartbeat binary
+- [x] Documentation
+- [ ] Link nxmesh crate and enable live publish
+- [ ] Task queue + result reporting over mesh
 - [ ] Integration with Elara / Lyra for creative automation loops
 - [ ] Optional QNET incentive for completed automation jobs
