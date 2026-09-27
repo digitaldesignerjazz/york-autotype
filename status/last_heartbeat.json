@@ -1,9 +1,9 @@
 {
   "agent": "york-autotype",
   "status": "alive",
-  "timestamp": "2026-09-27T04:34:05Z",
+  "timestamp": "2026-09-27T11:43:27Z",
   "repo": "digitaldesignerjazz/york-autotype",
-  "run_id": "36294679736",
+  "run_id": "36316651538",
   "mesh_ready": true,
   "message": "York Autotype node is online and mesh-capable"
 }
